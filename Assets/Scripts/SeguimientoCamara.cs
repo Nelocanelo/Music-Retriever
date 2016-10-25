@@ -6,7 +6,7 @@ public class SeguimientoCamara : MonoBehaviour {
     public float dampTime = 0.15f;
     private Vector3 velocity = Vector3.zero;
     public Transform target;
-    Camera camera;
+    new Camera camera;
     GameObject player;
     Movimiento movimientoPlayer;
 

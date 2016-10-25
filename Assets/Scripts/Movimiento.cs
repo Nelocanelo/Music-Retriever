@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Movimiento : MonoBehaviour {
 
@@ -27,19 +28,6 @@ public class Movimiento : MonoBehaviour {
             movimiento *= velocidad;
             transform.Translate(movimiento * Time.deltaTime);
         }
-
-        /*
-        if (Input.GetAxis("Horizontal") > 0.1f)
-        {
-            Vector3 movimiento = new Vector3(miRigidBody.position.x + 1, miRigidBody.position.y, miRigidBody.position.z);
-            miRigidBody.MovePosition(movimiento);
-
-        }else if(Input.GetAxis("Horizontal") < -0.1f)
-        {
-            Vector3 movimiento = new Vector3(miRigidBody.position.x - 1, miRigidBody.position.y, miRigidBody.position.z);
-            miRigidBody.MovePosition(movimiento);
-        }
-        */
 	}
 
     void FixedUpdate()
@@ -55,6 +43,11 @@ public class Movimiento : MonoBehaviour {
         if (otro.tag == "suelo")
         {
             enElSuelo = true;
+        }
+
+        if (otro.tag == "gameover")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
