@@ -50,12 +50,14 @@ public class MovimientoCharacterController : MonoBehaviour {
     }
 
     void estaEnElSuelo() {
-        if (Physics.Raycast(transform.position, -transform.up, controlador.height / 1.8f))//-transform.up es para que vaya para abajo, por el menos.
+        if (Physics.Raycast(transform.position, -transform.up, controlador.height / 1.6f))//-transform.up es para que vaya para abajo, por el menos.
         {
+            Debug.DrawLine(transform.position, new Vector3(transform.position.x, controlador.height / 1.6f,transform.position.z));
             enSuelo = true;
         }
         else {
             enSuelo = false;
+            Debug.DrawLine(transform.position, new Vector3(transform.position.x, controlador.height / 1.6f, transform.position.z));
         }
     }
 
