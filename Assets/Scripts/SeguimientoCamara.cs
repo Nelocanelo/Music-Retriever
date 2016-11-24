@@ -8,13 +8,13 @@ public class SeguimientoCamara : MonoBehaviour {
     public Transform target;
     new Camera camera;
     GameObject player;
-    Movimiento movimientoPlayer;
+    MovimientoCharacterController movimientoPlayer;
 
     void Start()
     {
         camera = GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
-        movimientoPlayer = player.GetComponent<Movimiento>();
+        movimientoPlayer = player.GetComponent<MovimientoCharacterController>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class SeguimientoCamara : MonoBehaviour {
     {
         if (target)
         {
-            if (movimientoPlayer.enElSuelo)
+            if (movimientoPlayer.enSuelo)
             {
                 Vector3 point = camera.WorldToViewportPoint(target.position);
                 Vector3 delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));

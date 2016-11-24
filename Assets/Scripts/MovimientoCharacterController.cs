@@ -10,11 +10,12 @@ public class MovimientoCharacterController : MonoBehaviour {
 
     private float velocidadCaida;
     private CharacterController controlador;
-    private bool enSuelo;
+    [HideInInspector]public bool enSuelo;
+    private RaycastHit hit;
 
-    
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         controlador = GetComponent<CharacterController>();
 	}
 	
@@ -50,10 +51,13 @@ public class MovimientoCharacterController : MonoBehaviour {
     }
 
     void estaEnElSuelo() {
-        if (Physics.Raycast(transform.position, -transform.up, controlador.height / 1.6f))//-transform.up es para que vaya para abajo, por el menos.
+        if (Physics.Raycast(transform.position, -transform.up, out hit,controlador.height / 1.6f))//-transform.up es para que vaya para abajo, por el menos.
         {
-            Debug.DrawLine(transform.position, new Vector3(transform.position.x, controlador.height / 1.6f,transform.position.z));
-            enSuelo = true;
+            if (hit.collider.gameObject.tag == "suelo")
+            {
+                Debug.DrawLine(transform.position, new Vector3(transform.position.x, controlador.height / 1.6f, transform.position.z));
+                enSuelo = true;
+            }    
         }
         else {
             enSuelo = false;

@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemigoMuerto2 : MonoBehaviour
+public class Enemigo2Muerto : MonoBehaviour
 {
 
     Enemigo2 enemy;
