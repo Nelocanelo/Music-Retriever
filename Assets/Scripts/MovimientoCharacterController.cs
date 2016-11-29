@@ -27,6 +27,11 @@ public class MovimientoCharacterController : MonoBehaviour {
         movimientoLateral();
 	}
 
+    void FixedUpdate()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+    }
+
     void movimientoLateral() {
         float velx = Input.GetAxis("Horizontal");
         if (velx != 0) controlador.Move(new Vector3(velx, 0) * velocidad * Time.deltaTime);
@@ -71,5 +76,11 @@ public class MovimientoCharacterController : MonoBehaviour {
         {
             SceneManager.LoadScene(0);
         }
+    }
+
+    public void Herido(int dir)
+    {
+        Debug.Log("YAAAAAAAAAAAAAARRGGHGHGH");
+        controlador.Move(new Vector3(0.3f * dir, 0.2f) * 6);
     }
 }

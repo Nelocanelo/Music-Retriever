@@ -22,20 +22,26 @@ public class SeguimientoCamara : MonoBehaviour {
     {
         if (target)
         {
+
+            Vector3 point = camera.WorldToViewportPoint(target.position);
+            Vector3 delta;
+
             if (movimientoPlayer.enSuelo)
             {
-                Vector3 point = camera.WorldToViewportPoint(target.position);
-                Vector3 delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
-                Vector3 destination = transform.position + delta;
-                transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
-            }else
-            {
-                Vector3 point = camera.WorldToViewportPoint(target.position);
-                Vector3 delta = new Vector3(target.position.x, transform.position.y, target.position.z) - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
-                Vector3 destination = transform.position + delta;
-                transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+                delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
             }
-        }
+            else if ((camera.WorldToViewportPoint(target.position).y <= 0))
+            {
+                Debug.Log("toco fondo");
+                delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 1f, point.z));
+            }
+            else 
+            {
+                delta = new Vector3(target.position.x, transform.position.y, target.position.z) - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
+            }
 
+            Vector3 destination = transform.position + delta;
+            transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+        }
     }
 }

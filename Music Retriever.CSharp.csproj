@@ -63,7 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemigo.cs" />
+    <Compile Include="Assets\Scripts\Enemigo2.cs" />
+    <Compile Include="Assets\Scripts\Enemigo2Muerto.cs" />
+    <Compile Include="Assets\Scripts\EnemigoMuerto.cs" />
+    <Compile Include="Assets\Scripts\Instrumentos.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />
+    <Compile Include="Assets\Scripts\MovimientoCharacterController.cs" />
     <Compile Include="Assets\Scripts\MovimientoRB.cs" />
     <Compile Include="Assets\Scripts\SeguimientoCamara.cs" />
   </ItemGroup>
