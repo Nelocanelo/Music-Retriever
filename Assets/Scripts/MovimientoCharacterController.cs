@@ -12,7 +12,9 @@ public class MovimientoCharacterController : MonoBehaviour {
     private CharacterController controlador;
     [HideInInspector]public bool enSuelo;
     private RaycastHit hit;
-
+    private bool herido;
+    private float tiempoHerido;
+    private Vector3 destHerido;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +27,16 @@ public class MovimientoCharacterController : MonoBehaviour {
         caer();
         saltar();
         movimientoLateral();
+
+        if (herido)
+        {
+            transform.position = Vector3.Lerp(transform.position, destHerido, 0.1f);
+            tiempoHerido += Time.deltaTime;
+            if (tiempoHerido > 0.5f)
+            {
+                herido = false;
+            }
+        }
 	}
 
     void FixedUpdate()
@@ -80,7 +92,13 @@ public class MovimientoCharacterController : MonoBehaviour {
 
     public void Herido(int dir)
     {
-        Debug.Log("YAAAAAAAAAAAAAARRGGHGHGH");
-        controlador.Move(new Vector3(0.3f * dir, 0.2f) * 6);
+        //controlador.Move(new Vector3(0.3f * dir, 0.2f) * 6);
+        if (!herido)
+        {
+            Debug.Log("YAAAAAAAAAAAAAARRGGHGHGH");
+            destHerido = new Vector3(transform.position.x + 3f * dir, transform.position.y + 2f);
+            herido = true;
+            tiempoHerido = 0;
+        }
     }
 }
