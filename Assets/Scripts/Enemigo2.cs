@@ -8,6 +8,7 @@ public class Enemigo2 : MonoBehaviour
 
     // Vector3 movimiento;
     float y0;
+    public float velocidad;
 
     void Awake()
     {
@@ -26,19 +27,7 @@ public class Enemigo2 : MonoBehaviour
 
     private void Move()
     {
-
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x,y0 + 3f * Mathf.Sin(1.2f * Time.time), gameObject.transform.position.z);
-        /*distancia = transform.position.x - distanciaInicial;
-        distancia = Mathf.Abs(distancia);
-        Debug.Log(distancia);
-        if (distancia <= distanciaMax) {
-            movimiento = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z);
-
-        } else if (distancia >= distanciaMax) {
-            movimiento = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
-        }
-             
-        transform.position = movimiento;*/
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x,y0 + 3f * Mathf.Sin(Time.time * velocidad), gameObject.transform.position.z);
     }
 
 }

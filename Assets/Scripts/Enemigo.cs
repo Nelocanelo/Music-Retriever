@@ -7,7 +7,7 @@ public class Enemigo : MonoBehaviour {
    
    // Vector3 movimiento;
     float x0;
-    public float velocidad = 2f;
+    public float velocidad;
 
     void Awake()
     {
