@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MovimientoCharacterController : MonoBehaviour {
 
@@ -16,9 +17,14 @@ public class MovimientoCharacterController : MonoBehaviour {
     private float tiempoHerido;
     private Vector3 destHerido;
 
+    private Text vidasText;
+    int vidas = 3;
+
     // Use this for initialization
     void Start () {
         controlador = GetComponent<CharacterController>();
+        vidasText = GameObject.FindGameObjectWithTag("Vidas").GetComponent<Text>();
+        vidasText.text = vidas.ToString();
 	}
 	
 	// Update is called once per frame
@@ -104,6 +110,9 @@ public class MovimientoCharacterController : MonoBehaviour {
             destHerido = new Vector3(transform.position.x + 3f * dir, transform.position.y + 2f);
             herido = true;
             tiempoHerido = 0;
+
+            vidas--;
+            vidasText.text = vidas.ToString();
         }
     }
 }
