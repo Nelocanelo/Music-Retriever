@@ -86,8 +86,13 @@ public class MovimientoCharacterController : MonoBehaviour {
     {
         if (otro.tag == "gameover")
         {
-            SceneManager.LoadScene(0);
+            gameOver();
         }
+    }
+
+    public void gameOver() {
+        Debug.Log("Los enemigos han robado la navidad, por culpa de que eres lento y sordo");
+        SceneManager.LoadScene(0);
     }
 
     public void Herido(int dir)
