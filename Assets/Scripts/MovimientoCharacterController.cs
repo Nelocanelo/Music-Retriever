@@ -93,12 +93,15 @@ public class MovimientoCharacterController : MonoBehaviour {
         if (otro.tag == "gameover")
         {
             gameOver();
+        }else if (otro.tag == "hitboxenemigo")
+        {
+            velocidadCaida = -velSalto;
         }
     }
 
     public void gameOver() {
         Debug.Log("Los enemigos han robado la navidad, por culpa de que eres lento y sordo");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Herido(int dir)
