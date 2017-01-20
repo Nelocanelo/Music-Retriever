@@ -4,14 +4,39 @@ using UnityEngine;
 
 public class ParedController : MonoBehaviour {
 
-	void Start () {
-		
+    [System.Serializable]
+    public class Boundary
+    {
+        public float yMin = 7.848f;
+        public float yMax = 8.951f;
+    }
+
+
+    float speed = 2;
+    Rigidbody rb;
+    Boundary boundary;
+    GameControllerFase2 controller;
+
+    void Start () {
+        rb = GetComponent<Rigidbody>();
+        controller = GameObject.FindGameObjectWithTag("GameControllerFase2").GetComponent<GameControllerFase2>();
 	}
 
-	void Update () {
-        if (Input.GetAxis("Vertical"))
+    void FixedUpdate()
+    {
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(0.0f , moveVertical,0.0f);
+        rb.velocity = movement * speed;
+        rb.position = new Vector3(0.0f,Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax),0.0f);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "EnemigoFase2")
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - 5 * Time.deltaTime,transform.position.z);
+            Destroy(other.gameObject,0.0f);
+            controller.score += 20;
         }
-	}
+    }
+
 }
