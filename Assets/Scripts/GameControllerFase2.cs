@@ -9,7 +9,7 @@ public class GameControllerFase2 : MonoBehaviour {
     GameObject[] spawners;
     public GameObject prefab;
 
-	void Start ()
+/*	void Start ()
     {
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
         InvokeRepeating("SpawnEnemyType1", 11.0f, 1f);
@@ -58,7 +58,7 @@ public class GameControllerFase2 : MonoBehaviour {
         copy = Instantiate(prefab, spawners[random].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
         copy.GetComponent<EnemigoControllerFase2>().speed = 0.4f;
     }
-
+    */
 
 
 }
