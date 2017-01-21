@@ -16,6 +16,7 @@ public class MovimientoCharacterController : MonoBehaviour {
     private bool herido;
     private float tiempoHerido;
     private Vector3 destHerido;
+    Animator anim;
 
     private Text vidasText;
     int vidas = 3;
@@ -25,6 +26,7 @@ public class MovimientoCharacterController : MonoBehaviour {
         controlador = GetComponent<CharacterController>();
         vidasText = GameObject.FindGameObjectWithTag("Vidas").GetComponent<Text>();
         vidasText.text = vidas.ToString();
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +35,15 @@ public class MovimientoCharacterController : MonoBehaviour {
         caer();
         saltar();
         movimientoLateral();
+
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            anim.SetBool("Andando", true);
+        }
+        else
+        {
+            anim.SetBool("Andando", false);
+        }
 
         if (herido)
         {
