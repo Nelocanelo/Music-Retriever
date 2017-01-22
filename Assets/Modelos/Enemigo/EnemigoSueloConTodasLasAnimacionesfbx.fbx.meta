@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ed39059df0bb65a45a90c73e8d74a59b
-timeCreated: 1485040646
+guid: e4ab093b3c310b04e871158f20cf5cc0
+timeCreated: 1485081939
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -25,12 +25,8 @@ ModelImporter:
     100034: Bone.012
     100036: Bone.013
     100038: Bone.013_end
-    100040: Camera
-    100042: //RootNode
-    100044: Lamp
-    100046: Lamp.001
-    100048: Lamp.002
-    100050: Sphere
+    100040: //RootNode
+    100042: Sphere
     400000: Armature
     400002: Bone
     400004: Bone.001
@@ -51,15 +47,14 @@ ModelImporter:
     400034: Bone.012
     400036: Bone.013
     400038: Bone.013_end
-    400040: Camera
-    400042: //RootNode
-    400044: Lamp
-    400046: Lamp.001
-    400048: Lamp.002
-    400050: Sphere
+    400040: //RootNode
+    400042: Sphere
     4300000: Sphere
-    7400000: Pisado
-    7400002: Armature|ArmatureAction.001
+    7400000: Armature|Correr
+    7400002: Armature|Idle
+    7400004: Armature|Pisado
+    7400006: Armature|Reirse
+    7400008: Armature|Reirse0
     9500000: //RootNode
     13700000: Sphere
   materials:
@@ -84,18 +79,18 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Pisado
-      takeName: Armature|ArmatureAction
+      name: Armature|Correr
+      takeName: Armature|Correr
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -149,14 +144,6 @@ ModelImporter:
       - path: Armature/Bone.011/Bone.012/Bone.013
         weight: 1
       - path: Armature/Bone.011/Bone.012/Bone.013/Bone.013_end
-        weight: 1
-      - path: Camera
-        weight: 1
-      - path: Lamp
-        weight: 1
-      - path: Lamp.001
-        weight: 1
-      - path: Lamp.002
         weight: 1
       - path: Sphere
         weight: 1
@@ -164,8 +151,80 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|ArmatureAction.001
-      takeName: Armature|ArmatureAction.001
+      name: Armature|Idle
+      takeName: Armature|Idle
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone/Bone.001/Bone.001_end
+        weight: 1
+      - path: Armature/Bone/Bone.002
+        weight: 1
+      - path: Armature/Bone/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/Bone/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Armature/Bone/Bone.005
+        weight: 1
+      - path: Armature/Bone/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Armature/Bone/Bone.005/Bone.006/Bone.007/Bone.007_end
+        weight: 1
+      - path: Armature/Bone.008
+        weight: 1
+      - path: Armature/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Armature/Bone.011
+        weight: 1
+      - path: Armature/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/Bone.011/Bone.012/Bone.013/Bone.013_end
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Pisado
+      takeName: Armature|Pisado
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -230,13 +289,77 @@ ModelImporter:
         weight: 1
       - path: Armature/Bone.011/Bone.012/Bone.013/Bone.013_end
         weight: 1
-      - path: Camera
+      - path: Sphere
         weight: 1
-      - path: Lamp
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Reirse
+      takeName: Armature|Reirse
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
         weight: 1
-      - path: Lamp.001
+      - path: Armature
         weight: 1
-      - path: Lamp.002
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone/Bone.001/Bone.001_end
+        weight: 1
+      - path: Armature/Bone/Bone.002
+        weight: 1
+      - path: Armature/Bone/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/Bone/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Armature/Bone/Bone.005
+        weight: 1
+      - path: Armature/Bone/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Armature/Bone/Bone.005/Bone.006/Bone.007/Bone.007_end
+        weight: 1
+      - path: Armature/Bone.008
+        weight: 1
+      - path: Armature/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Armature/Bone.011
+        weight: 1
+      - path: Armature/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/Bone.011/Bone.012/Bone.013/Bone.013_end
         weight: 1
       - path: Sphere
         weight: 1
@@ -266,7 +389,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
@@ -279,8 +402,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 67d294420cfba0845bf4dfee10a36dff,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
