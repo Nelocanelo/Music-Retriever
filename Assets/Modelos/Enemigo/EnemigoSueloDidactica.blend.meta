@@ -1,29 +1,49 @@
 fileFormatVersion: 2
-guid: 62baccb27a539334193510662dd85aaf
-timeCreated: 1484918506
+guid: 67d294420cfba0845bf4dfee10a36dff
+timeCreated: 1485041917
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Sphere
-    100004: Sphere_001
-    100006: Sphere_002
-    400000: //RootNode
-    400002: Sphere
-    400004: Sphere_001
-    400006: Sphere_002
-    2300000: Sphere
-    2300002: Sphere_001
-    2300004: Sphere_002
-    3300000: Sphere
-    3300002: Sphere_001
-    3300004: Sphere_002
-    4300000: Sphere_001
-    4300002: Sphere
-    4300004: Sphere_002
+    100000: Armature
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004
+    100012: Bone_005
+    100014: Bone_006
+    100016: Bone_007
+    100018: Bone_008
+    100020: Bone_009
+    100022: Bone_010
+    100024: Bone_011
+    100026: Bone_012
+    100028: Bone_013
+    100030: //RootNode
+    100032: Sphere
+    400000: Armature
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004
+    400012: Bone_005
+    400014: Bone_006
+    400016: Bone_007
+    400018: Bone_008
+    400020: Bone_009
+    400022: Bone_010
+    400024: Bone_011
+    400026: Bone_012
+    400028: Bone_013
+    400030: //RootNode
+    400032: Sphere
+    4300000: Sphere
     7400000: Default Take
+    7400002: ArmatureAction_002
     9500000: //RootNode
+    13700000: Sphere
   materials:
     importMaterials: 1
     materialName: 0

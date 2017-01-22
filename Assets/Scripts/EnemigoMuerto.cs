@@ -15,7 +15,7 @@ public class EnemigoMuerto : MonoBehaviour {
         if(other.tag == "Player")
         {
             enemy.pisado = true;
-            enemy.Muerto();
+            //enemy.Muerto();
         }
     }
 }
