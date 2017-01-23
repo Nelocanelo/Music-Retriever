@@ -47,7 +47,7 @@ public class Movimiento : MonoBehaviour {
 
         if (otro.tag == "gameover")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

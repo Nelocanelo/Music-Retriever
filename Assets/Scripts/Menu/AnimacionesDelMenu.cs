@@ -9,6 +9,14 @@ public class AnimacionesDelMenu : MonoBehaviour {
     private GameObject movedorMenu;
     private GameObject particulas;
 
+    //Musiquilla:
+    public AudioSource musica1;
+    public AudioSource musica2;
+    public AudioSource ladrarSonido;
+    //public AudioSource pasos;
+    private bool activarMusica2 = true;
+    private bool activarLadrido = true;
+
 
     //Booleanos que controlan la animación:
     private bool encontrarMusica = true;//Enemigo camina hacia las notas
@@ -27,6 +35,7 @@ public class AnimacionesDelMenu : MonoBehaviour {
         particulas = GameObject.FindGameObjectWithTag("Particulas");
         animadorEnemigo = enemigo.GetComponent<Animator>();
         animadorPerro = perro.GetComponent<Animator>();
+        musica1.Play();
     }
 
     IEnumerator encontrarMusicaf() {
@@ -51,8 +60,12 @@ public class AnimacionesDelMenu : MonoBehaviour {
     }
 
     IEnumerator ladridof() {
-        //ladrido (sonido)
         yield return new WaitForSeconds(1f);
+        musica1.Stop();
+        if (activarLadrido)
+        {
+            ladrarSonido.Play();
+        }
         StopCoroutine("ladridof");
         ladrido = false;
         perroCorriendo = true;
@@ -60,15 +73,25 @@ public class AnimacionesDelMenu : MonoBehaviour {
 
     IEnumerator perroCorriendof()
     {
-        animadorPerro.SetBool("Correr", true);
+        animadorPerro.SetBool("Andando", true);
         perro.transform.position = new Vector3(perro.transform.position.x + 0.05f, perro.transform.position.y, perro.transform.position.z);
         yield return new WaitForSeconds(4f);
-        animadorPerro.SetBool("Correr", true);
+        if (activarMusica2)
+        {
+            musica2.Play();
+            activarMusica2 = false;
+        }
+        animadorPerro.SetBool("Andando", true);
         perro.transform.position = new Vector3(perro.transform.position.x + 0.03f, perro.transform.position.y, perro.transform.position.z);
         enemigoCorriendo = true;
     }
 
     IEnumerator enemigoCorriendof() {
+        if (activarLadrido)
+        {
+            ladrarSonido.Play();
+            activarLadrido = false;
+        }
         animadorEnemigo.SetBool("Correr", true);
         enemigo.transform.position = new Vector3(enemigo.transform.position.x + 0.04f, enemigo.transform.position.y, enemigo.transform.position.z);
         yield return new WaitForSeconds(1);
@@ -119,16 +142,27 @@ public class AnimacionesDelMenu : MonoBehaviour {
         }
 
         if (destruirlos && !pararChiringuito) {
+            perroCorriendo = false;
+            enemigoCorriendo = false;
+            Destroy(animadorEnemigo);
+            Destroy(animadorPerro);
             Destroy(perro);
             Destroy(enemigo);
         }
 
         if (pararChiringuito) {
+            perroCorriendo = false;
+            enemigoCorriendo = false;
+            Destroy(animadorEnemigo);
+            Destroy(animadorPerro);
+            musica1.Stop();
+            musica2.Play();
             Destroy(perro);
             Destroy(enemigo);
             Destroy(particulas);
             StopAllCoroutines();
             movedorMenu.transform.localPosition = new Vector3(movedorMenu.transform.localPosition.x, 0, movedorMenu.transform.localPosition.z);
+            pararChiringuito = false;
         }
 	}
 }

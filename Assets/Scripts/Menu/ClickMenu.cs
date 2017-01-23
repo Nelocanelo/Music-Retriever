@@ -13,7 +13,7 @@ public class ClickMenu : MonoBehaviour {
     }
 
     public void empezarModo2() {
-
+        SceneManager.LoadScene(3);
     }
 
     public void salir() {
