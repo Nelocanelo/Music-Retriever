@@ -127,6 +127,9 @@ public class MovimientoCharacterController : MonoBehaviour {
 
             vidas--;
             vidasText.text = vidas.ToString();
+            if (vidas <=0) {
+                gameOver();
+            }
         }
     }
 }
