@@ -64,6 +64,13 @@ public class MovimientoCharacterController : MonoBehaviour {
     void movimientoLateral() {
         float velx = Input.GetAxis("Horizontal");
         if (velx != 0) controlador.Move(new Vector3(velx, 0) * velocidad * Time.deltaTime);
+        if (velx > 0)//Para que rote
+        {
+            transform.rotation = Quaternion.AngleAxis(280, Vector3.up);
+        }
+        else if(velx<0) {
+            transform.rotation = Quaternion.AngleAxis(104, Vector3.up);
+        }
     }
 
     void saltar() {
