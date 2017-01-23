@@ -71,6 +71,7 @@ public class Enemigo : MonoBehaviour {
     
     void OnTriggerEnter(Collider otro)
     {
+        Debug.Log("Estoy dentro");
         if (otro.tag == "Player" && !pisado)
         {
             Debug.Log("tu vols morir?");
