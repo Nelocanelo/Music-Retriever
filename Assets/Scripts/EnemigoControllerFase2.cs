@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemigoControllerFase2 : MonoBehaviour {
 
     GameControllerFase2 controller;
     public int tipo;
     public float speed;
+    Text vidas;
 
 
 	// Use this for initialization
 	void Start () {
         controller = GameObject.FindGameObjectWithTag("GameControllerFase2").GetComponent<GameControllerFase2>();
+        vidas = GameObject.FindGameObjectWithTag("Vidas").GetComponent<Text>();
         switch (tipo)
         {
             case 1:
@@ -40,6 +43,7 @@ public class EnemigoControllerFase2 : MonoBehaviour {
         {
             Destroy(gameObject, 0.0f);
             controller.life -= 5;
+            vidas.text = controller.life.ToString();
         }
     }
 

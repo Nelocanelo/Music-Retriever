@@ -1,64 +1,65 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControllerFase2 : MonoBehaviour {
 
-    public float life;
+    public int life;
     public int score;
     GameObject[] spawners;
-    public GameObject prefab;
+    public GameObject prefab1;
+    public GameObject prefab2;
+    public GameObject prefab3;
+    public GameObject prefab4;
+    Text vidas;
+    GameObject victoria;
+    GameObject puntosFinales;
 
-/*	void Start ()
+    void Start ()
     {
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
-        InvokeRepeating("SpawnEnemyType1", 11.0f, 1f);
-        InvokeRepeating("SpawnEnemyType3", 1.0f, 8f);
-        InvokeRepeating("SpawnEnemyType4", 4.0f, 3f);
-        InvokeRepeating("SpawnEnemyType2", 3.0f, 2f);
-    }
-	
-	
-	void Update ()
-    {
+        vidas = GameObject.FindGameObjectWithTag("Vidas").GetComponent<Text>();
+        vidas.text = life.ToString();
+        victoria = GameObject.FindGameObjectWithTag("Victoria");
+        puntosFinales = GameObject.FindGameObjectWithTag("puntosVictoria");
+        InvokeRepeating("SpawnEnemyType1", 20.0f, 15f);  //yeah
+        InvokeRepeating("SpawnEnemyType2", 15.0f, 10f);  //pau tururu
+        InvokeRepeating("SpawnEnemyType3", 10.0f, 5f);   //turu turu turu
+        InvokeRepeating("SpawnEnemyType4", 5.0f, 2f);    //tun
         
-	}
+    }
+
+    void Update()
+    {
+        if (life <= 0)
+        {
+            Time.timeScale = 0;
+            victoria.SetActive(true);
+            puntosFinales.GetComponent<Text>().text = score.ToString();
+        }
+    }
 
     void SpawnEnemyType1()
     {
-        GameObject copy;
-        int random = Mathf.Abs(Random.Range(0, 4));
-        copy = Instantiate(prefab, spawners[random].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        copy.GetComponent<EnemigoControllerFase2>().speed = 0.1f;
+        Instantiate(prefab1, spawners[Mathf.Abs(Random.Range(0, 4))].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
     }
 
     void SpawnEnemyType2()
     {
-        int random = Mathf.Abs(Random.Range(0, 4));
-        GameObject copy = Instantiate(prefab, spawners[random].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        copy.GetComponent<EnemigoControllerFase2>().speed = 0.3f;
-        copy = Instantiate(prefab, copy.transform.position + new Vector3(0.3f, 0, 0), Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        copy.GetComponent<EnemigoControllerFase2>().speed = 0.3f;
-        copy = Instantiate(prefab, copy.transform.position + new Vector3(0.3f, 0, 0), Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        copy.GetComponent<EnemigoControllerFase2>().speed = 0.3f;
+        Instantiate(prefab2, spawners[Mathf.Abs(Random.Range(0, 4))].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
     }
 
     void SpawnEnemyType3()
     {
-        GameObject copy;
-        int random = Mathf.Abs(Random.Range(0, 4));
-        copy = Instantiate(prefab, spawners[random].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        copy.GetComponent<EnemigoControllerFase2>().speed = 0.9f;
+        Instantiate(prefab3, spawners[Mathf.Abs(Random.Range(0, 4))].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
     }
 
     void SpawnEnemyType4()
     {
-        GameObject copy;
-        int random = Mathf.Abs(Random.Range(0, 4));
-        copy = Instantiate(prefab, spawners[random].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        copy.GetComponent<EnemigoControllerFase2>().speed = 0.4f;
+        Instantiate(prefab4, spawners[Mathf.Abs(Random.Range(0, 4))].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
     }
-    */
+
 
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ParedController : MonoBehaviour {
 
@@ -16,11 +17,13 @@ public class ParedController : MonoBehaviour {
     Rigidbody rb;
     Boundary boundary;
     GameControllerFase2 controller;
+    Text text;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
         controller = GameObject.FindGameObjectWithTag("GameControllerFase2").GetComponent<GameControllerFase2>();
-	}
+        text = GameObject.FindGameObjectWithTag("puntos").GetComponent<Text>();
+    }
 
     void FixedUpdate()
     {
@@ -36,6 +39,8 @@ public class ParedController : MonoBehaviour {
         {
             Destroy(other.gameObject,0.0f);
             controller.score += 20;
+            text.text = controller.score.ToString();
+
         }
     }
 
