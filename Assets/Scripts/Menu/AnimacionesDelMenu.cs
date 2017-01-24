@@ -27,6 +27,8 @@ public class AnimacionesDelMenu : MonoBehaviour {
     private bool menuBajando;//Baja el menu mientras el perro persigue al enemigo y desaparecen
     private bool destruirlos;//Porque han salido del plano de la camara.
     private bool pararChiringuito;
+    private bool interruptor;
+    private bool todoDestruido;
 	
 	void Start () {
         movedorMenu = GameObject.FindGameObjectWithTag("MovedorMenu");
@@ -117,7 +119,7 @@ public class AnimacionesDelMenu : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetMouseButtonDown(0) && !interruptor && !todoDestruido || Input.GetKeyDown(KeyCode.Space) && !interruptor && !todoDestruido) {
             pararChiringuito = true;
         }
 
@@ -148,9 +150,11 @@ public class AnimacionesDelMenu : MonoBehaviour {
             Destroy(animadorPerro);
             Destroy(perro);
             Destroy(enemigo);
+            todoDestruido = true;
         }
 
         if (pararChiringuito) {
+            interruptor = true;
             perroCorriendo = false;
             enemigoCorriendo = false;
             Destroy(animadorEnemigo);

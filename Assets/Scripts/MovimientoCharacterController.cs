@@ -21,13 +21,19 @@ public class MovimientoCharacterController : MonoBehaviour {
     private Text vidasText;
     int vidas = 3;
 
+    private GameObject menuPausa;
+    public static bool pausaActivada = false;
+
     // Use this for initialization
     void Start () {
         controlador = GetComponent<CharacterController>();
         vidasText = GameObject.FindGameObjectWithTag("Vidas").GetComponent<Text>();
         vidasText.text = vidas.ToString();
         anim = GetComponent<Animator>();
-	}
+        menuPausa = GameObject.FindGameObjectWithTag("Pausa");
+        menuPausa.SetActive(false);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,6 +41,20 @@ public class MovimientoCharacterController : MonoBehaviour {
         caer();
         saltar();
         movimientoLateral();
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (!pausaActivada)
+            {
+                menuPausa.SetActive(true);
+                pausaActivada = true;
+                Time.timeScale = 0;
+            }
+            else {
+                menuPausa.SetActive(false);
+                pausaActivada = false;
+                Time.timeScale = 1;
+            }
+        }
 
         if (Input.GetAxis("Horizontal") != 0)
         {
