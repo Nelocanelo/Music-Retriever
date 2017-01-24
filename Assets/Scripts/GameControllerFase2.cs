@@ -68,7 +68,7 @@ public class GameControllerFase2 : MonoBehaviour {
 
     void SpawnEnemyType4()
     {
-        Instantiate(prefab4, spawners[Mathf.Abs(Random.Range(0, 4))].transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        Instantiate(prefab4, spawners[Mathf.Abs(Random.Range(0, 4))].transform.position - new Vector3(0.05f, 0, 0), Quaternion.Euler(0.0f, 0.0f, 0.0f));
     }
 
 
