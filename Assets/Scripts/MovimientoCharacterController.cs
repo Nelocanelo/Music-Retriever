@@ -56,7 +56,7 @@ public class MovimientoCharacterController : MonoBehaviour {
             }
         }
 
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") != 0 && enSuelo)
         {
             anim.SetBool("Andando", true);
         }
@@ -95,7 +95,8 @@ public class MovimientoCharacterController : MonoBehaviour {
 
     void saltar() {
         if (Input.GetKeyDown(KeyCode.Space) && enSuelo) {
-            velocidadCaida = -velSalto; 
+            velocidadCaida = -velSalto;
+            anim.SetTrigger("Saltando");
         }
     }
 

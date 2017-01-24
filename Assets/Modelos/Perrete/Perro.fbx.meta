@@ -1,90 +1,72 @@
 fileFormatVersion: 2
-guid: 6b2c5f306b85425449cead86616a3b2e
-timeCreated: 1485014153
+guid: 52693ce942c9f6c47ae54b94d732df9e
+timeCreated: 1485271571
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Armature
-    100002: boca
-    100004: Bone
-    100006: Bone.001
-    100008: Bone.002
-    100010: Bone.003
-    100012: Bone.003_end
-    100014: Bone.004
-    100016: Bone.005
-    100018: Bone.006
-    100020: Bone.006_end
-    100022: Bone.007
-    100024: Bone.008
-    100026: Bone.009
-    100028: Bone.009_end
-    100030: Bone.010
-    100032: Bone.011
-    100034: Bone.012
-    100036: Bone.012_end
-    100038: Bone.013
-    100040: Bone.014
-    100042: Bone.015
-    100044: Bone.015_end
-    100046: cabeza
-    100048: collar
-    100050: Cuerpo
-    100052: nariz
-    100054: oreja
-    100056: oreja d
-    100058: //RootNode
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.003_end
+    100012: Bone.004
+    100014: Bone.005
+    100016: Bone.006
+    100018: Bone.006_end
+    100020: Bone.007
+    100022: Bone.008
+    100024: Bone.009
+    100026: Bone.009_end
+    100028: Bone.010
+    100030: Bone.011
+    100032: Bone.012
+    100034: Bone.012_end
+    100036: Bone.013
+    100038: Bone.014
+    100040: Bone.015
+    100042: Bone.015_end
+    100044: Bone.016
+    100046: Bone.017
+    100048: Bone.018
+    100050: Bone.019
+    100052: Bone.019_end
+    100054: Cuerpo
+    100056: //RootNode
     400000: Armature
-    400002: boca
-    400004: Bone
-    400006: Bone.001
-    400008: Bone.002
-    400010: Bone.003
-    400012: Bone.003_end
-    400014: Bone.004
-    400016: Bone.005
-    400018: Bone.006
-    400020: Bone.006_end
-    400022: Bone.007
-    400024: Bone.008
-    400026: Bone.009
-    400028: Bone.009_end
-    400030: Bone.010
-    400032: Bone.011
-    400034: Bone.012
-    400036: Bone.012_end
-    400038: Bone.013
-    400040: Bone.014
-    400042: Bone.015
-    400044: Bone.015_end
-    400046: cabeza
-    400048: collar
-    400050: Cuerpo
-    400052: nariz
-    400054: oreja
-    400056: oreja d
-    400058: //RootNode
-    2300000: boca
-    2300002: cabeza
-    2300004: collar
-    2300006: nariz
-    2300008: oreja
-    2300010: oreja d
-    3300000: boca
-    3300002: cabeza
-    3300004: collar
-    3300006: nariz
-    3300008: oreja
-    3300010: oreja d
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.003_end
+    400012: Bone.004
+    400014: Bone.005
+    400016: Bone.006
+    400018: Bone.006_end
+    400020: Bone.007
+    400022: Bone.008
+    400024: Bone.009
+    400026: Bone.009_end
+    400028: Bone.010
+    400030: Bone.011
+    400032: Bone.012
+    400034: Bone.012_end
+    400036: Bone.013
+    400038: Bone.014
+    400040: Bone.015
+    400042: Bone.015_end
+    400044: Bone.016
+    400046: Bone.017
+    400048: Bone.018
+    400050: Bone.019
+    400052: Bone.019_end
+    400054: Cuerpo
+    400056: //RootNode
     4300000: Cuerpo
-    4300002: oreja d
-    4300004: oreja
-    4300006: collar
-    4300008: boca
-    4300010: cabeza
-    4300012: nariz
-    7400000: Andar
+    7400000: Armature|Andar
+    7400002: Armature|Quieto
+    7400004: Armature|Saltar
     9500000: //RootNode
     13700000: Cuerpo
   materials:
@@ -109,8 +91,8 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Andar
-      takeName: Armature|ArmatureAction
+      name: Armature|Andar
+      takeName: Armature|Andar
       firstFrame: 10
       lastFrame: 30
       wrapMode: 0
@@ -155,6 +137,16 @@ ModelImporter:
         weight: 1
       - path: Armature/Bone/Bone.010/Bone.011/Bone.012/Bone.012_end
         weight: 1
+      - path: Armature/Bone/Bone.016
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018/Bone.019
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018/Bone.019/Bone.019_end
+        weight: 1
       - path: Armature/Bone.001
         weight: 1
       - path: Armature/Bone.001/Bone.002
@@ -179,19 +171,179 @@ ModelImporter:
         weight: 1
       - path: Armature/Bone.013/Bone.014/Bone.015/Bone.015_end
         weight: 1
-      - path: boca
+      - path: Cuerpo
         weight: 1
-      - path: cabeza
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Quieto
+      takeName: Armature|Quieto
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
         weight: 1
-      - path: collar
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.007
+        weight: 1
+      - path: Armature/Bone/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/Bone/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Armature/Bone/Bone.010
+        weight: 1
+      - path: Armature/Bone/Bone.010/Bone.011
+        weight: 1
+      - path: Armature/Bone/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone/Bone.010/Bone.011/Bone.012/Bone.012_end
+        weight: 1
+      - path: Armature/Bone/Bone.016
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018/Bone.019
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018/Bone.019/Bone.019_end
+        weight: 1
+      - path: Armature/Bone.001
+        weight: 1
+      - path: Armature/Bone.001/Bone.002
+        weight: 1
+      - path: Armature/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone.001/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Armature/Bone.004
+        weight: 1
+      - path: Armature/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone.004/Bone.005/Bone.006/Bone.006_end
+        weight: 1
+      - path: Armature/Bone.013
+        weight: 1
+      - path: Armature/Bone.013/Bone.014
+        weight: 1
+      - path: Armature/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/Bone.013/Bone.014/Bone.015/Bone.015_end
         weight: 1
       - path: Cuerpo
         weight: 1
-      - path: nariz
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Saltar
+      takeName: Armature|Saltar
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
         weight: 1
-      - path: oreja
+      - path: Armature
         weight: 1
-      - path: oreja d
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.007
+        weight: 1
+      - path: Armature/Bone/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/Bone/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Armature/Bone/Bone.010
+        weight: 1
+      - path: Armature/Bone/Bone.010/Bone.011
+        weight: 1
+      - path: Armature/Bone/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone/Bone.010/Bone.011/Bone.012/Bone.012_end
+        weight: 1
+      - path: Armature/Bone/Bone.016
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018/Bone.019
+        weight: 1
+      - path: Armature/Bone/Bone.016/Bone.017/Bone.018/Bone.019/Bone.019_end
+        weight: 1
+      - path: Armature/Bone.001
+        weight: 1
+      - path: Armature/Bone.001/Bone.002
+        weight: 1
+      - path: Armature/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone.001/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Armature/Bone.004
+        weight: 1
+      - path: Armature/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone.004/Bone.005/Bone.006/Bone.006_end
+        weight: 1
+      - path: Armature/Bone.013
+        weight: 1
+      - path: Armature/Bone.013/Bone.014
+        weight: 1
+      - path: Armature/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/Bone.013/Bone.014/Bone.015/Bone.015_end
+        weight: 1
+      - path: Cuerpo
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
