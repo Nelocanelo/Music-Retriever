@@ -41,9 +41,11 @@ public class GameControllerFase2 : MonoBehaviour {
             puntosFinales.GetComponent<Text>().text = score.ToString();
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }else if (Input.GetKeyDown(KeyCode.Escape))
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene(0);
             }
         }
