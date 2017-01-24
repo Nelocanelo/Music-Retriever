@@ -5,7 +5,10 @@ using System.Collections.Generic;
 
 public class AudioManagerMio : MonoBehaviour {
     public List<GameObject> instrumentos;
-    private int objetivo;
+    public int objetivo;
+    private Text textoInstrumento;
+    string textoInicial;
+    private GameObject textoInstrumentoObj;
 
     public AudioSource violin;
     public AudioSource viola;
@@ -25,14 +28,30 @@ public class AudioManagerMio : MonoBehaviour {
     public static bool esbasso = false;
     public static bool esclarinete = false;
 
+    private bool violin1;
+    private bool viola1;
+    private bool violonchelo1;
+    private bool fagot1;
+    private bool flauta1;
+    private bool oboe1;
+    private bool basso1;
+    private bool clarinete1;
+
+
 
     private GameObject victoria;
 
     // Use this for initialization
     void Start () {
 
-        objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+        textoInstrumento = GameObject.FindGameObjectWithTag("TextoInstrumento").GetComponent<Text>();
+        textoInstrumentoObj = GameObject.FindGameObjectWithTag("TextoInstrumento");
+        textoInicial = textoInstrumento.text;
+
+        objetivo = Random.Range(0, instrumentos.Count);
         instrumentos.Remove(instrumentos[objetivo]);
+        textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+        violin1 = true;
 
         victoria = GameObject.FindGameObjectWithTag("Victoria");
         victoria.SetActive(false);
@@ -43,52 +62,89 @@ public class AudioManagerMio : MonoBehaviour {
         Debug.Log(esbasso+ "," + esclarinete + "," + esfagot + "," + esflauta + "," + esoboe + "," + esviola + "," + esviolin + "," + esviolonchelo);
         if (esviolin) {
             violin.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
-
+            if (!violin1) {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                violin1 = true;
+            }
         }
         if (esviola)
         {
             viola.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
-
+            if (!viola1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                viola1 = true;
+            }
         }
         if (esviolonchelo)
         {
             violonchelo.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
+            if (!violonchelo1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                violonchelo1 = true;
+            }
         }
         if (esfagot)
         {
-            violonchelo.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
+            fagot.mute = false;
+            if (!fagot1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                fagot1 = true;
+            }
         }
         if (esoboe)
         {
             oboe.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
+            if (!oboe1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                fagot1 = true;
+            }
         }
         if (esflauta)
         {
             flauta.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
+            if (!flauta1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                flauta1 = true;
+            }
         }
         if (esbasso)
         {
             basso.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            instrumentos.Remove(instrumentos[objetivo]);
+            if (!basso1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                instrumentos.Remove(instrumentos[objetivo]);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                basso1 = true;
+            }
         }
         if (esclarinete)
         {
             clarinete.mute = false;
-            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
-            //instrumentos.Remove(instrumentos[objetivo]);
+            if (!clarinete1)
+            {
+                objetivo = Random.Range(0, instrumentos.Count);
+                textoInstrumento.text = textoInicial + instrumentos[objetivo].name;
+                //instrumentos.Remove(instrumentos[objetivo]);
+                clarinete1 = true;
+            }
         }
 
         //El if del vencedor xD
