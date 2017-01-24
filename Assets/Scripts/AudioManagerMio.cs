@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class AudioManagerMio : MonoBehaviour {
+    public List<GameObject> instrumentos;
+    private int objetivo;
+
     public AudioSource violin;
     public AudioSource viola;
     public AudioSource violonchelo;
@@ -26,6 +30,10 @@ public class AudioManagerMio : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+        instrumentos.Remove(instrumentos[objetivo]);
+
         victoria = GameObject.FindGameObjectWithTag("Victoria");
         victoria.SetActive(false);
 	}
@@ -35,34 +43,52 @@ public class AudioManagerMio : MonoBehaviour {
         Debug.Log(esbasso+ "," + esclarinete + "," + esfagot + "," + esflauta + "," + esoboe + "," + esviola + "," + esviolin + "," + esviolonchelo);
         if (esviolin) {
             violin.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
+
         }
         if (esviola)
         {
             viola.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
+
         }
         if (esviolonchelo)
         {
             violonchelo.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
         }
         if (esfagot)
         {
             violonchelo.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
         }
         if (esoboe)
         {
             oboe.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
         }
         if (esflauta)
         {
             flauta.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
         }
         if (esbasso)
         {
             basso.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            instrumentos.Remove(instrumentos[objetivo]);
         }
         if (esclarinete)
         {
             clarinete.mute = false;
+            objetivo = UnityEngine.Random.Range(0, instrumentos.Count);
+            //instrumentos.Remove(instrumentos[objetivo]);
         }
 
         //El if del vencedor xD
