@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameControllerFase2 : MonoBehaviour {
@@ -22,7 +23,7 @@ public class GameControllerFase2 : MonoBehaviour {
         vidas = GameObject.FindGameObjectWithTag("Vidas").GetComponent<Text>();
         vidas.text = life.ToString();
         victoria = GameObject.FindGameObjectWithTag("Victoria");
-        puntosFinales = GameObject.FindGameObjectWithTag("puntosVictoria");
+        victoria.SetActive(false);
         InvokeRepeating("SpawnEnemyType1", 20.0f, 15f);  //yeah
         InvokeRepeating("SpawnEnemyType2", 15.0f, 10f);  //pau tururu
         InvokeRepeating("SpawnEnemyType3", 10.0f, 5f);   //turu turu turu
@@ -36,7 +37,15 @@ public class GameControllerFase2 : MonoBehaviour {
         {
             Time.timeScale = 0;
             victoria.SetActive(true);
+            puntosFinales = GameObject.FindGameObjectWithTag("puntosVictoria");
             puntosFinales.GetComponent<Text>().text = score.ToString();
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
