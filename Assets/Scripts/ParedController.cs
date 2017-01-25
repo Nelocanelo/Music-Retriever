@@ -20,7 +20,7 @@ public class ParedController : MonoBehaviour {
     Text text;
 
     void Start () {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         controller = GameObject.FindGameObjectWithTag("GameControllerFase2").GetComponent<GameControllerFase2>();
         text = GameObject.FindGameObjectWithTag("puntos").GetComponent<Text>();
         boundary = new Boundary();
@@ -29,12 +29,10 @@ public class ParedController : MonoBehaviour {
     void FixedUpdate()
     {
         float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(0.0f , moveVertical,0.0f);
-        rb.velocity = movement * speed;
-        rb.position = new Vector3(0.0f,Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax),0.0f);
+        transform.position = new Vector3(transform.position.x,Mathf.Clamp(transform.position.y + moveVertical * Time.deltaTime * 2, boundary.yMin, boundary.yMax),transform.position.z);
     }
 
-   /* void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         Debug.Log("hoygan");
         if(other.tag == "EnemigoFase2")
@@ -42,7 +40,6 @@ public class ParedController : MonoBehaviour {
             Destroy(other.gameObject,0.0f);
             controller.score += 20;
             text.text = controller.score.ToString();
-
         }
     }*/
 
