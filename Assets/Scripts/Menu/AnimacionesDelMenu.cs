@@ -144,7 +144,6 @@ public class AnimacionesDelMenu : MonoBehaviour {
         }
 
         if (destruirlos && !pararChiringuito) {
-            StopAllCoroutines();
             perroCorriendo = false;
             enemigoCorriendo = false;
             //Destroy(animadorEnemigo);
@@ -154,7 +153,6 @@ public class AnimacionesDelMenu : MonoBehaviour {
             //Destroy(enemigo);
             enemigo.SetActive(false);
             todoDestruido = true;
-            pararChiringuito = true;
         }
 
         if (pararChiringuito) {
