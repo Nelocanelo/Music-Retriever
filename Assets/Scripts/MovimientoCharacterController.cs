@@ -31,6 +31,7 @@ public class MovimientoCharacterController : MonoBehaviour {
         vidasText.text = vidas.ToString();
         anim = GetComponent<Animator>();
         menuPausa = GameObject.FindGameObjectWithTag("Pausa");
+        menuPausa.SetActive(true);
         menuPausa.SetActive(false);
 
     }

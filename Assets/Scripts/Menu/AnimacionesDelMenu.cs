@@ -123,15 +123,15 @@ public class AnimacionesDelMenu : MonoBehaviour {
             pararChiringuito = true;
         }
 
-        if (encontrarMusica && ! pararChiringuito)
+        if (encontrarMusica && ! pararChiringuito )
         {
             StartCoroutine("encontrarMusicaf");
         }
-        else if (coger && !pararChiringuito) {
+        else if (coger && !pararChiringuito ) {
             StartCoroutine("cogerf");
-        } else if (ladrido && !pararChiringuito) {
+        } else if (ladrido && !pararChiringuito ) {
             StartCoroutine("ladridof");
-        } else if (perroCorriendo && !pararChiringuito) {
+        } else if (perroCorriendo && !pararChiringuito ) {
             StartCoroutine("perroCorriendof");
         }
 

@@ -13,6 +13,7 @@ public class Enemigo : MonoBehaviour {
     private GameObject particulasCorcheasOtraVer;
     private GameObject particulasLlaveSol;
     public bool muerte;
+    public int puntos;
 
     void Awake()
     {

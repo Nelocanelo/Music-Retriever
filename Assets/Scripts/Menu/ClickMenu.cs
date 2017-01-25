@@ -8,7 +8,7 @@ public class ClickMenu : MonoBehaviour {
     void Start()
     {
         menuPausa = GameObject.FindGameObjectWithTag("Pausa");
-        menuPausa.SetActive(true);
+        //menuPausa.SetActive(true);
     }
 
     //MENU PRINCIPAL:
