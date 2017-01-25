@@ -8,6 +8,7 @@ public class ClickMenu : MonoBehaviour {
     void Start()
     {
         menuPausa = GameObject.FindGameObjectWithTag("Pausa");
+        menuPausa.SetActive(true);
     }
 
     //MENU PRINCIPAL:
@@ -33,13 +34,13 @@ public class ClickMenu : MonoBehaviour {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         MovimientoCharacterController.pausaActivada = false;
-        Debug.LogError("yeeeeepa");
     }
 
     public void volverAEmpezar() {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         MovimientoCharacterController.pausaActivada = false;
+        menuPausa.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -47,6 +48,7 @@ public class ClickMenu : MonoBehaviour {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         MovimientoCharacterController.pausaActivada = false;
+        menuPausa.SetActive(true);
         SceneManager.LoadScene(0);
     }
 }
