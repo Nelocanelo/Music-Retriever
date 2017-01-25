@@ -19,15 +19,40 @@ public class ParedController : MonoBehaviour {
     GameControllerFase2 controller;
     Text text;
 
+    private GameObject menuPausa;
+    public static bool pausaActivada = false;
+
     void Start () {
         //rb = GetComponent<Rigidbody>();
         controller = GameObject.FindGameObjectWithTag("GameControllerFase2").GetComponent<GameControllerFase2>();
         text = GameObject.FindGameObjectWithTag("puntos").GetComponent<Text>();
         boundary = new Boundary();
+        menuPausa = GameObject.FindGameObjectWithTag("Pausa");
+        menuPausa.SetActive(true);
+        menuPausa.SetActive(false);
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!pausaActivada)
+            {
+                menuPausa.SetActive(true);
+                pausaActivada = true;
+                Time.timeScale = 0;
+            }
+            else
+            {
+                menuPausa.SetActive(false);
+                pausaActivada = false;
+                Time.timeScale = 1;
+            }
+        }
     }
 
     void FixedUpdate()
     {
+
         float moveVertical = Input.GetAxis("Vertical");
         transform.position = new Vector3(transform.position.x,Mathf.Clamp(transform.position.y + moveVertical * Time.deltaTime * 2, boundary.yMin, boundary.yMax),transform.position.z);
     }
