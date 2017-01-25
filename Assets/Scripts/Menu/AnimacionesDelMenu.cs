@@ -144,27 +144,34 @@ public class AnimacionesDelMenu : MonoBehaviour {
         }
 
         if (destruirlos && !pararChiringuito) {
+            StopAllCoroutines();
             perroCorriendo = false;
             enemigoCorriendo = false;
-            Destroy(animadorEnemigo);
-            Destroy(animadorPerro);
-            Destroy(perro);
-            Destroy(enemigo);
+            //Destroy(animadorEnemigo);
+            //Destroy(animadorPerro);
+            perro.SetActive(false);
+            //Destroy(perro);
+            //Destroy(enemigo);
+            enemigo.SetActive(false);
             todoDestruido = true;
+            pararChiringuito = true;
         }
 
         if (pararChiringuito) {
+            StopAllCoroutines();
             interruptor = true;
             perroCorriendo = false;
             enemigoCorriendo = false;
-            Destroy(animadorEnemigo);
-            Destroy(animadorPerro);
+           // Destroy(animadorEnemigo);
+           // Destroy(animadorPerro);
             musica1.Stop();
             musica2.Play();
-            Destroy(perro);
-            Destroy(enemigo);
-            Destroy(particulas);
-            StopAllCoroutines();
+            //Destroy(perro);
+            //Destroy(enemigo);
+            enemigo.SetActive(false);
+            perro.SetActive(false);
+            particulas.SetActive(false);
+            //Destroy(particulas);
             movedorMenu.transform.localPosition = new Vector3(movedorMenu.transform.localPosition.x, 0, movedorMenu.transform.localPosition.z);
             pararChiringuito = false;
         }
