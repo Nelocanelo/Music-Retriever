@@ -54,7 +54,6 @@ public class EnemigoControllerFase2 : MonoBehaviour {
             Destroy(gameObject, 0.0f);
             controller.score += 20;
             text.text = controller.score.ToString();
-
         }
     }
 
