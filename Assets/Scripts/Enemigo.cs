@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Enemigo : MonoBehaviour {
     
@@ -14,6 +15,7 @@ public class Enemigo : MonoBehaviour {
     private GameObject particulasLlaveSol;
     public bool muerte;
     public int puntos;
+    private Text textoPuntos;
 
     void Awake()
     {
@@ -23,6 +25,7 @@ public class Enemigo : MonoBehaviour {
         particulasCorcheas = gameObject.transform.GetChild(3).gameObject;
         particulasCorcheasOtraVer = gameObject.transform.GetChild(2).gameObject;
         particulasLlaveSol = gameObject.transform.GetChild(4).gameObject;
+        textoPuntos = GameObject.FindGameObjectWithTag("Puntos").GetComponent<Text>();
     }
 	
 	// Update is called once per frame
@@ -37,11 +40,18 @@ public class Enemigo : MonoBehaviour {
             particulasCorcheas.SetActive(true);
             particulasCorcheasOtraVer.SetActive(true);
             particulasLlaveSol.SetActive(true);
+
+            int puntosTexto;
+            int.TryParse(textoPuntos.text, out puntosTexto);
+            Debug.Log(puntosTexto + puntos);
+            textoPuntos.text = (puntosTexto + puntos).ToString();
+
             if (particulasLlaveSol.GetComponent<ParticleSystem>().IsAlive() == false) {
                 morirDespuesDeEfectos = true;
             }
         }
         if (pisado) {
+            //textoPuntos.text
             Muerto();
         }
     }
