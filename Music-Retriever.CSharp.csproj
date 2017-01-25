@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioManagerMio.cs" />
+    <Compile Include="Assets\Scripts\AudioManagerMioTutorial.cs" />
     <Compile Include="Assets\Scripts\Enemigo.cs" />
     <Compile Include="Assets\Scripts\Enemigo2.cs" />
     <Compile Include="Assets\Scripts\Enemigo2Muerto.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\EnemigoMuerto.cs" />
     <Compile Include="Assets\Scripts\GameControllerFase2.cs" />
     <Compile Include="Assets\Scripts\Instrumentos.cs" />
+    <Compile Include="Assets\Scripts\InstrumentosTutorial.cs" />
     <Compile Include="Assets\Scripts\Menu\AnimacionesDelMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\ClickMenu.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />
