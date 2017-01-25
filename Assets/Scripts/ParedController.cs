@@ -8,8 +8,8 @@ public class ParedController : MonoBehaviour {
     [System.Serializable]
     public class Boundary
     {
-        public float yMin = 7.848f;
-        public float yMax = 8.951f;
+        public float yMin = 8.122f + 0.11f;
+        public float yMax = 9.311f - 0.154f;
     }
 
 
@@ -23,6 +23,7 @@ public class ParedController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         controller = GameObject.FindGameObjectWithTag("GameControllerFase2").GetComponent<GameControllerFase2>();
         text = GameObject.FindGameObjectWithTag("puntos").GetComponent<Text>();
+        boundary = new Boundary();
     }
 
     void FixedUpdate()
@@ -35,6 +36,7 @@ public class ParedController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("hoygan");
         if(other.tag == "EnemigoFase2")
         {
             Destroy(other.gameObject,0.0f);
