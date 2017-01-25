@@ -34,7 +34,7 @@ public class ParedController : MonoBehaviour {
         rb.position = new Vector3(0.0f,Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax),0.0f);
     }
 
-    void OnTriggerEnter(Collider other)
+   /* void OnTriggerEnter(Collider other)
     {
         Debug.Log("hoygan");
         if(other.tag == "EnemigoFase2")
@@ -44,6 +44,6 @@ public class ParedController : MonoBehaviour {
             text.text = controller.score.ToString();
 
         }
-    }
+    }*/
 
 }
