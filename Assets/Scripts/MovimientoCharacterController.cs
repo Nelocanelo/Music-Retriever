@@ -141,6 +141,8 @@ public class MovimientoCharacterController : MonoBehaviour {
 
     public void gameOver() {
         Debug.Log("Los enemigos han robado la navidad, por culpa de que eres lento y sordo");
+        AudioManagerMio.resetear = true;
+        AudioManagerMioTutorial.resetear = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
