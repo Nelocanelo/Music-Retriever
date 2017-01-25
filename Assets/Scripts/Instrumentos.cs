@@ -4,6 +4,7 @@ using System.Collections;
 public class Instrumentos : MonoBehaviour {
     //private AudioManagerMio audioManager;
     // Use this for initialization
+    int puntos = 50;
     private AudioManagerMio instrumentos;
 	void Start () {
         //  audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManagerMio>();
@@ -59,8 +60,7 @@ public class Instrumentos : MonoBehaviour {
                 AudioManagerMio.esclarinete = true;
                 Destroy(gameObject);
             }
-
-            
+            AudioManagerMio.puntosTotales += puntos;
         }
     }
 }

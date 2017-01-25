@@ -17,11 +17,11 @@ public class ClickMenu : MonoBehaviour {
     }
 
     public void empezarModo1() {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void empezarModo2() {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void salir() {
@@ -52,7 +52,7 @@ public class ClickMenu : MonoBehaviour {
         MovimientoCharacterController.pausaActivada = false;
         AudioManagerMioTutorial.resetear = true;
         AudioManagerMio.resetear = true;
-        menuPausa.SetActive(true);
+        //menuPausa.SetActive(true);
         SceneManager.LoadScene(0);
     }
 }

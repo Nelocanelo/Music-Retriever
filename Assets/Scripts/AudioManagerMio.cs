@@ -40,13 +40,14 @@ public class AudioManagerMio : MonoBehaviour {
     private bool basso1;
     private bool clarinete1;
 
-
+    private Text textoPuntos;
+    public static int puntosTotales = 0;
 
     private GameObject victoria;
 
     // Use this for initialization
     void Start () {
-        
+        textoPuntos = GameObject.FindGameObjectWithTag("Puntos").GetComponent<Text>();
 
         textoInstrumento = GameObject.FindGameObjectWithTag("TextoInstrumento").GetComponent<Text>();
         textoInstrumentoObj = GameObject.FindGameObjectWithTag("TextoInstrumento");
@@ -65,6 +66,7 @@ public class AudioManagerMio : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        textoPuntos.text = puntosTotales.ToString();
         // Debug.Log(esbasso+ "," + esclarinete + "," + esfagot + "," + esflauta + "," + esoboe + "," + esviola + "," + esviolin + "," + esviolonchelo);
         if (instrumentos.Count > 0)
         {
@@ -208,5 +210,8 @@ public class AudioManagerMio : MonoBehaviour {
         oboe1 = false;
         basso1 = false;
         clarinete1 = false;
+
+        puntosTotales = 0;
+        textoPuntos.text = "0";
     }
 }
