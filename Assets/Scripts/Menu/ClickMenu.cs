@@ -40,6 +40,8 @@ public class ClickMenu : MonoBehaviour {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         MovimientoCharacterController.pausaActivada = false;
+        AudioManagerMio.resetear = true;
+        AudioManagerMioTutorial.resetear = true;
         menuPausa.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -48,6 +50,8 @@ public class ClickMenu : MonoBehaviour {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         MovimientoCharacterController.pausaActivada = false;
+        AudioManagerMioTutorial.resetear = true;
+        AudioManagerMio.resetear = true;
         menuPausa.SetActive(true);
         SceneManager.LoadScene(0);
     }

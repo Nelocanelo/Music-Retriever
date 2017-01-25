@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class AudioManagerMio : MonoBehaviour {
+    public static bool resetear = false;
+
     public List<GameObject> instrumentos;
     public int objetivo;
     private Text textoInstrumento;
@@ -166,6 +168,45 @@ public class AudioManagerMio : MonoBehaviour {
         if (esbasso && esclarinete && esfagot && esflauta && esoboe && esviola && esviolin && esviolonchelo) {
             victoria.SetActive(true);
             menuVictoria.SetActive(true);
+            
         }
+
+        if (resetear) {
+            resetearf();
+        }
+    }
+
+    void resetearf() {
+        objetivo = 0;
+        textoInstrumento.text = textoInicial;
+        resetear = false;
+
+        esviolin = false;
+        esviola = false;
+        esviolonchelo = false;
+        esfagot = false;
+        esflauta = false;
+        esoboe = false;
+        esbasso = false;
+        esclarinete = false;
+
+
+        violin.mute = true;
+        viola.mute = true;
+        violonchelo.mute = true;
+        fagot.mute = true;
+        flauta.mute = true;
+        oboe.mute = true;
+        basso.mute = true;
+        clarinete.mute = true;
+
+        violin1 = false;
+        viola1 = false;
+        violonchelo1 = false;
+        fagot1 = false;
+        flauta1 = false;
+        oboe1 = false;
+        basso1 = false;
+        clarinete1 = false;
     }
 }
